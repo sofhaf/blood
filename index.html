@@ -1,23 +1,125 @@
-<!DOCTYPE html>
-<style>
-  /* netnet default bg */
-  body {
-    margin: 0;
-    background-image: linear-gradient(#515199a8 2px, transparent 1px),
-      linear-gradient(90deg, #515199a8 2px, transparent 1px);
-    background-size: 50px 50px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
 
-  body::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(0deg, #c76ebca8, #515199a8);
-  }
-</style>
-    
+<script>
+    const blood = '#802711'
+    const black = '#2E2222'
+    const silver = '#dcdcdc'
+    const grey = '#aaaaaa'
+    const slate = '#333333'
+    const blue = '#d3e3fc'
+  
+    function createText(cool, yvalue, dye, size) {
+        const text = document.createElement("div")
+        const content = document.createTextNode(cool)
+        text.appendChild(content)
+        const currentDiv = document.getElementById("div1")
+        document.body.insertBefore(text, currentDiv)
+        text.style.position = 'absolute'
+        text.style.top = yvalue 
+        text.style.left = innerWidth / 7
+        text.style.color = dye
+        text.style.fontSize = size
+      }
+
+      function createComputer(xpixel, ypixel) {
+        const computer = document.createElement("div")
+        computer.className = 'square'
+        document.body.appendChild(computer)
+        computer.style.position = 'absolute'
+        computer.style.clipPath = "polygon(9% 0, 91% 0, 87% 49%, 100% 83%, 0 83%, 13% 49%)"
+        computer.style.top = ypixel
+        computer.style.left = xpixel
+        computer.style.background = slate
+        computer.style.height = 444
+        computer.style.width = 444
+        computer.style.zIndex = 0
+        const frame = document.createElement("div")
+        computer.appendChild(frame)
+        frame.style.position = 'absolute'
+        frame.style.clipPath = "polygon(9% 0, 13.5% 49%, 20% 49%, 16% 6%, 84% 6%, 82% 43%, 18% 43%, 20% 49%, 86% 49%, 91% 0)"
+        frame.style.background = silver
+        frame.style.height = 444
+        frame.style.width = 444
+        frame.style.zIndex = 22
+        const reality = document.createElement('a')
+        const realities = document.createTextNode("with our realities")
+        reality.appendChild(realities)
+        ///
+        ///
+        ///
+        reality.title = "Disappearing Rain by Deena Larsen"
+        ///
+        ///
+        ///
+        reality.href = "https://www.deenalarsen.net/rain/river/rivers/withourindex.html"
+        ///
+        ///
+        ///
+        computer.appendChild(reality)
+        reality.style.position = 'absolute'
+        reality.style.zIndex = 33
+        reality.style.top = 195
+        reality.style.left = 162
+        reality.style.textDecoration = 'none'
+        reality.style.color = grey
+        const screen = document.createElement("div")
+        computer.appendChild(screen)
+        screen.style.position = 'absolute'
+        screen.style.clipPath = "polygon(11% 6%, 88% 6%, 82% 43%, 19% 43%)"
+        screen.style.background = blue
+        screen.style.height = 444
+        screen.style.width = 444
+        screen.style.zIndex = 11
+        const line1 = document.createElement("p")
+        line1.innerText = "I want control back"
+        computer.appendChild(line1)
+        line1.style.position = 'absolute'
+        line1.style.top = 33
+        line1.style.left = 111
+        line1.style.zIndex = 33
+        line1.style.fontSize = 22
+        const line2 = document.createElement("p")
+        line2.innerText = "But professor assigns more"
+        computer.appendChild(line2)
+        line2.style.position = 'absolute'
+        line2.style.top = 66
+        line2.style.left = 111
+        line2.style.zIndex = 33
+        line2.style.fontSize = 22
+        const link = document.createElement('a')
+        const line3 = document.createTextNode("Tech covered in blood")
+        link.appendChild(line3)
+        link.title = "Tech covered in blood"
+        link.href = "https://vaughnrichard.github.io/26210-haiku/"
+        computer.appendChild(link)
+        link.style.position = 'absolute'
+        link.style.zIndex = 33
+        link.style.top = 122
+        link.style.left = 111
+        link.style.color = blood
+        link.style.fontSize = 22
+        const keys = document.createElement("div")
+        computer.appendChild(keys)
+        keys.style.position = 'absolute'
+        keys.style.clipPath = "polygon(13.5% 49%, 86% 49%, 100% 82%, 0 82%)"
+        keys.style.background = grey
+        keys.style.height = 444
+        keys.style.width = 444
+        keys.style.zIndex = 22
+    }
+
+    function setup () {
+       document.body.style.backgroundColor = black
+       createComputer(22, 33)
+       createComputer(488, 33)
+       createComputer(955, 33)
+       createComputer(22, 299)
+       createComputer(488, 299)
+       createComputer(955, 299)
+       createComputer(22, 566)
+       createComputer(488, 566)
+       createComputer(955, 566)
+    }
+
+        window.addEventListener('load', setup)
+
+    </script>
