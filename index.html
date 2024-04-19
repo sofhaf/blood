@@ -7,19 +7,6 @@
     const slate = '#333333'
     const blue = '#d3e3fc'
   
-    function createText(cool, yvalue, dye, size) {
-        const text = document.createElement("div")
-        const content = document.createTextNode(cool)
-        text.appendChild(content)
-        const currentDiv = document.getElementById("div1")
-        document.body.insertBefore(text, currentDiv)
-        text.style.position = 'absolute'
-        text.style.top = yvalue 
-        text.style.left = innerWidth / 7
-        text.style.color = dye
-        text.style.fontSize = size
-      }
-
       function createComputer(xpixel, ypixel) {
         const computer = document.createElement("div")
         computer.className = 'square'
